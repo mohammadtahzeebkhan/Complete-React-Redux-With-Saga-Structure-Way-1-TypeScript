@@ -30,7 +30,7 @@ const UserContainer: React.FC<any> = (props) => {
     };
 
     // Call the action creator with the requestData object
-    props.fetchUserRequest(requestData);
+        props.fetchUserRequest(requestData);
   }, []);
 
   console.log("UserContainer props", props);
