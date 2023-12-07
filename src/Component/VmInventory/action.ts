@@ -1,13 +1,15 @@
 // actions.ts
 
-export const FETCH_USERS_REQUEST = "FETCH_USERS_REQUEST";
-export const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS";
-export const FETCH_USERS_FAILURE = "FETCH_USERS_FAILURE";
+export const FETCH_VM_INVENTORY_REQUEST = "FETCH_VM_INVENTORY_REQUEST";
+export const FETCH_VM_INVENTORY_SUCCESS = "FETCH_VM_INVENTORY_SUCCESS";
+export const FETCH_VM_INVENTORY_FAILURE = "FETCH_VM_INVENTORY_FAILURE";
 
 // Define UserRequestData type
 export interface UserRequestData {
   url: string;
   method: string;
+  header:any,
+  payload:any,
   handleError: (error: any) => void;
   handleResponse: (response: any) => void;
   // Add other properties if needed
@@ -15,17 +17,17 @@ export interface UserRequestData {
 
 // Define action types
 export interface FetchUsersRequestAction {
-  type: typeof FETCH_USERS_REQUEST;
+  type: typeof FETCH_VM_INVENTORY_REQUEST;
   data: UserRequestData;
 }
 
 interface FetchUsersSuccessAction {
-  type: typeof FETCH_USERS_SUCCESS;
+  type: typeof FETCH_VM_INVENTORY_SUCCESS;
   userdata: User[]; // Replace 'User[]' with the appropriate type for userdata
 }
 
 interface FetchUsersFailureAction {
-  type: typeof FETCH_USERS_FAILURE;
+  type: typeof FETCH_VM_INVENTORY_FAILURE;
   error: any; // Replace 'any' with the appropriate type for error
 }
 
@@ -46,7 +48,7 @@ export type UserActionTypes =
 export const fetchUserRequest = (requestData: UserRequestData): FetchUsersRequestAction => {
   console.log("fetchUserRequest myurldata---->", requestData);
   return {
-    type: FETCH_USERS_REQUEST,
+    type: FETCH_VM_INVENTORY_REQUEST,
     data: requestData,
   };
 };
@@ -54,14 +56,14 @@ export const fetchUserRequest = (requestData: UserRequestData): FetchUsersReques
 export const fetchUserSuccess = (userdata: any): FetchUsersSuccessAction => {
     console.log("userData",userdata)
   return {
-    type: FETCH_USERS_SUCCESS,
+    type: FETCH_VM_INVENTORY_SUCCESS,
     userdata,
   };
 };
 
 export const fetchUserFailure = (error: any): FetchUsersFailureAction => {
   return {
-    type: FETCH_USERS_FAILURE,
+    type: FETCH_VM_INVENTORY_FAILURE,
     error,
   };
 };

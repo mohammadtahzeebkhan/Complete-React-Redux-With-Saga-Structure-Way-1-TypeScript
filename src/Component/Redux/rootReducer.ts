@@ -1,7 +1,7 @@
 // rootReducer.ts
 
 import { combineReducers } from "redux";
-import userReducer from "../UserPage/reducer";
+import userReducer from "../VmInventory/reducer";
 //import postReducer from "../Components/PostPage/postReducer";
 
 const rootReducer = combineReducers({

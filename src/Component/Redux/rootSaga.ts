@@ -1,5 +1,5 @@
 import { all } from "redux-saga/effects";
-import userSaga from "../UserPage/saga"; // Make sure to use the correct path to the userSaga file
+import userSaga from "../VmInventory/saga"; // Make sure to use the correct path to the userSaga file
 
 // rootSaga is also a generator function
 function* rootSaga() {

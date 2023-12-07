@@ -1,7 +1,7 @@
 import {
-    FETCH_USERS_REQUEST,
-    FETCH_USERS_SUCCESS,
-    FETCH_USERS_FAILURE,
+    FETCH_VM_INVENTORY_REQUEST,
+    FETCH_VM_INVENTORY_SUCCESS,
+    FETCH_VM_INVENTORY_FAILURE,
     UserActionTypes,
   } from "./action";
   
@@ -25,14 +25,14 @@ import {
   
   const userReducer = (state = initialState, action: UserActionTypes): UserState => {
     switch (action.type) {
-      case FETCH_USERS_REQUEST:
+      case FETCH_VM_INVENTORY_REQUEST:
         return {
           ...state,
           loading: true,
           error: null,
         };
   
-      case FETCH_USERS_SUCCESS:
+      case FETCH_VM_INVENTORY_SUCCESS:
         return {
           ...state,
           loading: false,
@@ -40,7 +40,7 @@ import {
           user: action.userdata,
         };
   
-      case FETCH_USERS_FAILURE:
+      case FETCH_VM_INVENTORY_FAILURE:
         return {
           ...state,
           loading: false,
